@@ -1,0 +1,36 @@
+#Loading {
+     display: flex; /* Enable Flexbox */
+     flex-direction: column; /* Stack items vertically */
+     justify-content: center; /* Center items vertically */
+     align-items: center; /* Center items horizontally */
+     text-align: center; /* Center text inside the div */
+ }
+ #Loading img{
+     width: 100px;
+     height: 100px;
+ }
+
+ #body{
+     text-align: center;
+     display: grid;
+     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+     grid-gap: 40px;
+     width: 80%;
+     margin: 10px auto;
+     padding: 20px;
+     place-items: center;
+ }
+
+
+ body {
+    background: url('./Images/BG.png') no-repeat center center fixed; /* Add your image here */
+    background-size: cover; /* Ensures the image covers the entire page */
+    color: white;
+  }
+
+  .bgcolor{
+    background-color: aliceblue;
+  }
+
+
+ 
