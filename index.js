@@ -8,6 +8,10 @@ let foodDesc=document.querySelector('#foodDesc');
 let heading=document.querySelector('#heading');
 
 let search=document.querySelector("#SearchFood");
+
+let DNF404=document.querySelector("#NOT-FOUND");
+DNF404.classList.add('d-none');
+
 search.addEventListener('submit',(event)=>{
      event.preventDefault();
      heading.classList.add('d-none');
@@ -23,12 +27,23 @@ async function fetchAPI(foodName) {
      let data= await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`);
      let obj= await data.json();
      loading.classList.add('d-none');
+     DNF404.classList.add('d-none');
      bodyObj.classList.remove('d-none');
+     foodDesc.classList.add('d-none');
      // console.log(obj);
      displayItems(obj);
      }
      catch(e){
-          alert("OM Ganeshay NAmha");
+          // alert("OM Ganeshay NAmha");
+          loading.classList.add('d-none');
+
+          bodyObj.classList.add('d-none');
+
+          foodDesc.classList.add('d-none');
+
+          heading.classList.add('d-none');
+          DNF404.classList.remove('d-none');
+
      }
 
 }
@@ -99,6 +114,7 @@ function displayDetailes(meal)
      addIngredient(meal);
      bodyObj.classList.add('d-none');
      foodDesc.classList.remove('d-none');
+     DNF404.classList.add('d-none');
 }
 
 
